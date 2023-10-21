@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Degree Plan</h1>
+<ul>
+    {% for degreePlan in degreePlans%}
+    <li>{{ degreePlan.DegreeId }}</li>
+    {% endfor %}
+</ul>
+
+<h1>Students</h1>
+<ul>
+    {% for student in students%}
+    <li>{{ student.Name }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}
