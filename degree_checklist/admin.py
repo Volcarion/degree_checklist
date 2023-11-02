@@ -1,34 +1,34 @@
 from django.contrib import admin
-from .models import Course, Student, StudentCourse, StudentDegree, DegreePlan
+from .models import Course, College, Department, Program, ProgramCourse
 
 
-class DegreePlanAdmin(admin.ModelAdmin):
-    list_display = ('DegreeId', 'DegreeName')
+class CollegeAdmin(admin.ModelAdmin):
+    list_display = ('CollegeId', 'Name')
 
 
-class StudentDegreeAdmin(admin.ModelAdmin):
-    list_display = ('StudentId', 'DegreeId')
+class DepartmentAdmin(admin.ModelAdmin):
+    list_display = ('DepartmententId', 'Name')
 
 
-class StudentCourseAdmin(admin.ModelAdmin):
-    list_display = ('StudentId', 'CourseId')
+class ProgramAdmin(admin.ModelAdmin):
+    list_display = ('ProgramId', 'Name')
 
 
-class StudentAdmin(admin.ModelAdmin):
-    list_display = ('StudentId', 'Name', 'Birthdate', 'Address')
+class ProgramCourseAdmin(admin.ModelAdmin):
+    list_display = ('ProgramId', 'CourseId')
 
 
 class CourseAdmin(admin.ModelAdmin):
-    list_display = ('CourseId', 'CourseName')
+    list_display = ('CourseId', 'Name')
 
 
 # Register your models here.
-admin.site.register(DegreePlan, DegreePlanAdmin)
+admin.site.register(College, CollegeAdmin)
 
-admin.site.register(StudentDegree, StudentDegreeAdmin)
+admin.site.register(Department, DepartmentAdmin)
 
-admin.site.register(StudentCourse, StudentCourseAdmin)
+admin.site.register(Program, ProgramAdmin)
 
-admin.site.register(Student, StudentAdmin)
+admin.site.register(ProgramCourse, ProgramCourseAdmin)
 
 admin.site.register(Course, CourseAdmin)

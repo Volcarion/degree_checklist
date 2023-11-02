@@ -1,10 +1,10 @@
 from django.shortcuts import render
 # from django.http import HttpResponse
-from .models import DegreePlan, Student
+from .models import Program, Course
 
 
 def index(request):
-    degreePlans = DegreePlan.objects.all()
-    students = Student.objects.all()
-    return render(request, 'index.html', {'degreePlans': degreePlans,
-                                          'students': students})
+    programs = Program.objects.all()
+    courses = Course.objects.all()
+    return render(request, 'index.html', {'programs': programs,
+                                          'courses': courses})
