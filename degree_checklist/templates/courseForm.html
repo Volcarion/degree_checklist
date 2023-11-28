@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Add a Course</h1>
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{courseForm.as_p}}
+    <button class="save btn bth-default" type="submit">Save</button>
+</form>
+{% endblock %}
